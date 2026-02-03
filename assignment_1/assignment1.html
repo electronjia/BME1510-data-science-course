@@ -7525,10 +7525,11 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># import necessary libraries</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
@@ -7562,12 +7563,16 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">excel_filepath</span> <span class="o">=</span> <span class="s2">"BME1510_Lecture1_Data.xlsx"</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Define the path to the Excel file</span>
+<span class="n">excel_filepath</span> <span class="o">=</span> <span class="s2">"BME1510_Lecture1_Data.xlsx"</span>
+
+<span class="c1"># Read the Excel file</span>
 <span class="n">excel_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">excel_filepath</span><span class="p">)</span>
 
+<span class="c1"># Get the information about the DataFrame columns</span>
 <span class="n">df_info</span> <span class="o">=</span> <span class="n">excel_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -7605,10 +7610,11 @@ memory usage: 5.3+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">excel_df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Get the summary statistics of the DataFrame</span>
+<span class="n">excel_df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -7619,7 +7625,7 @@ memory usage: 5.3+ KB
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -7687,7 +7693,7 @@ memory usage: 5.3+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"""</span>
@@ -7851,17 +7857,31 @@ Seventh column is missing 6 values. Unique values in column Excitement_level: [3
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">excel_df</span><span class="p">[</span><span class="s1">'Program'</span><span class="p">]</span> <span class="o">=</span> <span class="n">excel_df</span><span class="p">[</span><span class="s1">'Program'</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="n">x</span><span class="p">)</span>
 <span class="n">program_types</span> <span class="o">=</span> <span class="n">excel_df</span><span class="p">[</span><span class="s1">'Program'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
-<span class="n">master_vars</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">program_types</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span>  <span class="n">i</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'m'</span><span class="p">)]</span>
-<span class="n">python_experience_types</span> <span class="o">=</span> <span class="n">excel_df</span><span class="p">[</span><span class="s1">'Python_experience'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
-<span class="n">python_experience_vars</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">python_experience_types</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span>  <span class="n">i</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'y'</span><span class="p">)]</span>
-<span class="n">master_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">excel_df</span><span class="p">[(</span><span class="n">excel_df</span><span class="p">[</span><span class="s1">'Program'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">master_vars</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">excel_df</span><span class="p">[</span><span class="s1">'Python_experience'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">python_experience_vars</span><span class="p">))])</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Proportion of master students having python experience in the dataset: </span><span class="si">{</span><span class="n">master_count</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">excel_df</span><span class="p">)</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="c1"># Identify master students in dataframe</span>
+<span class="n">master_vars</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">program_types</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span>  <span class="n">i</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'m'</span><span class="p">)]</span>
+<span class="c1"># print(f'Master program types in dataset: {master_vars}')</span>
+
+<span class="c1"># Identify python experience types in dataframe</span>
+<span class="n">python_experience_types</span> <span class="o">=</span> <span class="n">excel_df</span><span class="p">[</span><span class="s1">'Python_experience'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="c1"># print(f'Python experience types in dataset: {python_experience_types}')</span>
+<span class="n">python_experience_vars</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">python_experience_types</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span>  <span class="n">i</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'y'</span><span class="p">)]</span>
+
+<span class="c1"># Filter only master's students</span>
+<span class="n">masters_df</span> <span class="o">=</span> <span class="n">excel_df</span><span class="p">[</span><span class="n">excel_df</span><span class="p">[</span><span class="s1">'Program'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">master_vars</span><span class="p">)]</span>
+
+<span class="c1"># Among master's students, filter those with Python experience</span>
+<span class="n">masters_with_python</span> <span class="o">=</span> <span class="n">masters_df</span><span class="p">[</span><span class="n">masters_df</span><span class="p">[</span><span class="s1">'Python_experience'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">python_experience_vars</span><span class="p">)]</span>
+
+<span class="c1"># Correct proportion</span>
+<span class="n">proportion_python</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">masters_with_python</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">masters_df</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Proportion of Master’s students with Python experience: </span><span class="si">{</span><span class="n">proportion_python</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7874,7 +7894,7 @@ Seventh column is missing 6 values. Unique values in column Excitement_level: [3
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Proportion of master students having python experience in the dataset: 51.58%
+<pre>Proportion of Master’s students with Python experience: 75.38%
 </pre>
 </div>
 </div>
@@ -7894,7 +7914,7 @@ Seventh column is missing 6 values. Unique values in column Excitement_level: [3
 </li>
 <li><p>The logic behind finding master's program students that have experience with python is first finding string entries in column Python_experience starting with "y" (yes, yep, y, YES, yesss) which lets me count all the possible entries even if they were misspelled.</p>
 </li>
-<li><p>Finally to get proportion, I find the rows that fit 2 filtering strategies described above and divide by the total lengt of the dataset.</p>
+<li><p>Finally, calculate the proportion by dividing the number of Master’s students with Python experience by the total number of Master’s students, not the full dataset.</p>
 </li>
 </ul>
 </div>
@@ -7911,38 +7931,40 @@ Seventh column is missing 6 values. Unique values in column Excitement_level: [3
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=907e21f6">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=907e21f6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [50]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">exc_level_types</span> <span class="o">=</span> <span class="n">excel_df</span><span class="p">[</span><span class="s1">'Excitement_level'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Find the unique entries in excitement level column</span>
+<span class="n">exc_level_types</span> <span class="o">=</span> <span class="n">excel_df</span><span class="p">[</span><span class="s1">'Excitement_level'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="c1"># print(f'Excitement level types in dataset: {exc_level_types}')</span>
+
+
+<span class="c1"># Handle positive manual cases by mapping them to numeric values</span>
 <span class="n">manual_cases</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'👍'</span><span class="p">,</span>
        <span class="s1">'∞'</span><span class="p">,</span> <span class="s1">'yes'</span><span class="p">,</span>
         <span class="s1">'80% (nervous)'</span><span class="p">]</span>
 
 <span class="n">excel_df</span><span class="p">[</span><span class="s1">'Excitement_level'</span><span class="p">]</span> <span class="o">=</span> <span class="n">excel_df</span><span class="p">[</span><span class="s1">'Excitement_level'</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">8</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">manual_cases</span> <span class="k">else</span> <span class="n">x</span><span class="p">)</span>
 
-<span class="n">excel_df</span><span class="p">[</span><span class="s1">'Excitement_level'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">excel_df</span><span class="p">[</span><span class="s1">'Excitement_level'</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">'coerce'</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f15a139f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [51]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">excited_count</span> <span class="o">=</span> <span class="n">excel_df</span><span class="p">[</span><span class="n">excel_df</span><span class="p">[</span><span class="s1">'Excitement_level'</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">7</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Proportion of students with excitement level 7 or higher: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">excited_count</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">excel_df</span><span class="p">)</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="c1"># Convert the excitement level column to numeric, coercing errors to NaN</span>
+<span class="n">excel_df</span><span class="p">[</span><span class="s1">'Excitement_level'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">excel_df</span><span class="p">[</span><span class="s1">'Excitement_level'</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">'coerce'</span><span class="p">)</span>
+
+<span class="c1"># Keep only valid numeric excitement levels (e.g., between 0 and 10)</span>
+<span class="n">valid_exc_df</span> <span class="o">=</span> <span class="n">excel_df</span><span class="p">[(</span><span class="n">excel_df</span><span class="p">[</span><span class="s1">'Excitement_level'</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">excel_df</span><span class="p">[</span><span class="s1">'Excitement_level'</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">)]</span>
+
+<span class="c1"># Students excited for the course (excitement level 7 or higher)</span>
+<span class="n">excited_students</span> <span class="o">=</span> <span class="n">valid_exc_df</span><span class="p">[</span><span class="n">valid_exc_df</span><span class="p">[</span><span class="s1">'Excitement_level'</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">7</span><span class="p">]</span>
+
+<span class="c1"># Proportion</span>
+<span class="n">proportion_excited</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">excited_students</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">valid_exc_df</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Proportion of students excited for the course: </span><span class="si">{</span><span class="n">proportion_excited</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7955,7 +7977,7 @@ Seventh column is missing 6 values. Unique values in column Excitement_level: [3
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Proportion of students with excitement level 7 or higher: 28.42%
+<pre>Proportion of students excited for the course: 23.38%
 </pre>
 </div>
 </div>
@@ -7969,9 +7991,13 @@ Seventh column is missing 6 values. Unique values in column Excitement_level: [3
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="My-approach-focused-on-the-following:">My approach focused on the following:<a class="anchor-link" href="#My-approach-focused-on-the-following:">¶</a></h3><ul>
-<li><p>Get the unique entries present in the Excitement_level column and find the entries that need manual intervention such as emoji, symbols, etc</p>
+<li><p>Map manual cases that show very excited level to 8 to include during analysis</p>
 </li>
-<li><p>Then I replace the manual cases with the excitement level 8 and filter out non-numeric entries</p>
+<li><p>Convert the excitementl level column to numeric values and forcing missing values, string, emojis, etc to become NaN</p>
+</li>
+<li><p>Then, I filter out the propoer excitement level range of 0-10 while filtering the NaNs, outliers, etc.</p>
+</li>
+<li><p>Then, I get the dataframe subsection where excitement level is &gt;=7 showing excited student entries</p>
 </li>
 <li><p>Final step is calculating proportion of entries with values &gt; 7 and divide by total dataframe length</p>
 </li>
@@ -8021,16 +8047,6 @@ Seventh column is missing 6 values. Unique values in column Excitement_level: [3
 <li><p>Suggest a small topic to present on such as git version control, compare anaconda vs ux for environment control, etc. This will need to be a small project though so that it is fair for that student to not overwork.</p>
 </li>
 </ol>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d006e38d">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 </div>
 </div>
 </div>
